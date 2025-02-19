@@ -1,0 +1,11 @@
+[package]
+name = "kult-divinity-lost-community-scenario"
+version = "0.1.0"
+authors = ["Martin Heuschober"]
+license = "MIT"
+description = "An unofficial template for community scenarios for the TTRPG 'KULT: divinity lost'"
+
+[template]
+path = "template"
+entrypoint = "main.typ"
+thumbnail = "thumbnail.png"
