@@ -1,7 +1,7 @@
-#import "./typ/pageref.typ": *
-#import "./typ/skills.typ": *
-#import "./typ/style.typ": *
-#import "./typ/trackers.typ": *
+#import "./typ/pageref.typ": pageref
+#import "./typ/skills.typ": skill-tree, attrs
+#import "./typ/style.typ": colors, fonts, pages, is-printer-friendly, initialized, move
+#import "./typ/trackers.typ": advancements, experience, stability, wounds
 
 #let template(doc) = [
   #set page(
@@ -31,7 +31,7 @@
       )
     ),
     background:
-    if not pf {
+    if not is-printer-friendly {
       context(
         if here().page() == 1 {
           image("img/bg_title.jpg")
@@ -55,7 +55,7 @@
         fill: colors.secondary,
         size: 40pt,
       )
-      if not pf {
+      if not is-printer-friendly {
         pagebreak(weak:true, to: "even") 
         set page(background: image("img/bg_section.jpg"))
         align(horizon, it)
@@ -80,7 +80,7 @@
     }
     if (it.level == 4) {
       block(width: 100%, stroke: (bottom: colors.secondary + 2pt),
-        box(stroke: if pf { 2pt }, fill: if not pf {colors.secondary},inset: 2mm )[$suit.diamond$ #it.body]
+        box(stroke: if is-printer-friendly { 2pt }, fill: if not is-printer-friendly {colors.secondary},inset: 2mm )[$suit.diamond$ #it.body]
       )
     }
   }

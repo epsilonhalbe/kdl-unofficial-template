@@ -1,7 +1,7 @@
 #import "@preview/droplet:0.3.1": dropcap
 
-#let pf = sys.inputs.at("printer-friendly", default: none) == "true"
-#let nice-or(color, default: black ) = if not pf { color } else { default }
+#let is-printer-friendly = sys.inputs.at("printer-friendly", default: none) == "true"
+#let nice-or(color, default: black ) = if not is-printer-friendly { color } else { default }
 
 #let colors = (
   primary: nice-or(rgb("#9b201f")),
@@ -9,7 +9,6 @@
   accent: nice-or(rgb("#2a548b")),
   light: nice-or(rgb("#AAAAAA"), default: white),
   dark: nice-or(rgb("#222222")),
-  pale: rgb("999"),
   text: nice-or(rgb("#444444")),
 )
 
@@ -27,7 +26,7 @@
 )
 
 #let pages = (
-  blank: if not pf {
+  blank: if not is-printer-friendly {
     pagebreak()
     page(
       fill: colors.primary,
@@ -47,12 +46,18 @@
       depth: 2,
       indent: auto,
       fill: line(
-        stroke: colors.pale,
+        stroke: colors.light,
         length: 100%,
       ),
     )
   },
-  title: (title, author, upd: datetime.today()) => [
+  title: (
+    title: [],
+    author: "",
+    upd: datetime.today(),
+    size: 80pt,
+    subtitle: none
+  ) => [
     #set document(
       title: title,
       author: (author),
@@ -73,7 +78,7 @@
         font: fonts.title,
         weight: "bold",
         fill: colors.secondary,
-        size: 80pt,
+        size: size,
         title,
       ) <title>
       #v(2.3cm)
@@ -95,7 +100,7 @@
       #v(5cm)
       #block(width: 75%,
         radius: 2mm,
-        fill: colors.pale.transparentize(85%),
+        fill: colors.light.transparentize(85%),
         inset: 5mm, text(fill: nice-or(colors.light))[
           This is an *unofficial* module for KULT: Divinity Lost. It is not
           affiliated with and/or endorsed by Helmgast AB. A copy of the *KULT:

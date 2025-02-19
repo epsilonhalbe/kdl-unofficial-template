@@ -1,5 +1,34 @@
 #import "./skills.typ": attrs
 
+#let experience = block(breakable: false)[
+*Mark 1 XP $square.stroked$ $square.stroked$ $square.stroked$ $square.stroked$ $square.stroked$ for:*
+- Have we discovered anything new about the Truth?
+- Have we learned anything new about our characters?
+- Have we challenged ourselves?
+- Each resolved dramatic hook.
+
+After 5 XP pick one Advancement.
+]
+
+#let advancements = block(breakable: false)[
+#strong[Choose One of These:]
+
+- $square.stroked.medium$ $square.stroked.medium$ $square.stroked.medium$ $square.stroked.medium$ $square.stroked.medium$ $square.stroked.medium$ Increase one active Attribute +1 (to max +3).
+- $square.stroked.medium$ $square.stroked.medium$ Increase one passive Attribute +1 (to max +3).
+- $square.stroked.medium$ Increase any one Attribute +1 (to max +4).
+- $square.stroked.medium$ $square.stroked.medium$ $square.stroked.medium$ Select a new Advantage from your Archetype.
+
+#strong[After 5 Advancements You May Also Choose:]
+
+- $square.stroked.medium$ $square.stroked.medium$ Increase any one Attribute +1 (to max +4).
+- $square.stroked.medium$ $square.stroked.medium$ Select a new Advantage from any Aware Archetype.
+- $square.stroked.medium$ End your character’s story arc as you see fit, and create a new Aware character, who starts with 2 Advancements.
+- $square.stroked.medium$ Replace your current Archetype with another Aware Archetype, and erase one of your starting 3 Advantages.
+
+#strong[After 10 Advancements You May Also Choose:]
+- $square.stroked.medium$ Advance your character to an Enlightened Archetype.
+]
+
 #let stability = block(breakable: false)[
   #let numberbox(number) = box(height: 2.95mm, width: 2.95mm, inset: 0.8mm, stroke: 0.4pt, text(size: 6pt, [#number]))
   #table(

@@ -65,7 +65,7 @@
   import cetz.draw: *
   let active(coord, body, value: none) = {
     let radius = 0.95
-    circle(coord, radius: 0.95, stroke: 0.1cm + colors.primary , fill: if pf {white} else {colors.secondary.lighten(30%)})
+    circle(coord, radius: 0.95, stroke: 0.1cm + colors.primary , fill: if is-printer-friendly {white} else {colors.secondary.lighten(30%)})
     content((rel: (0,-1.8), to: coord),
       box(fill: white.opacify(-95%),
       radius: 5mm, inset: 1mm, align(center, text(size: 7pt, body)))
@@ -78,7 +78,7 @@
          (rel:(0,1.1), to: coord),
          (rel:(-1.1,0), to: coord),
          (rel:(0,-1.1), to: coord),
-         stroke: 1mm + colors.primary, close: true, fill: if pf {white} else { colors.secondary.lighten(30%)} )
+         stroke: 1mm + colors.primary, close: true, fill: if is-printer-friendly {white} else { colors.secondary.lighten(30%)} )
     content((rel: (0,-2.0), to: coord),
       box(align(center, text(size: 6.5pt, body)))
     )
