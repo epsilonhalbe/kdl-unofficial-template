@@ -1,4 +1,9 @@
 #import "@preview/kdl-unofficial-template:0.1.0" as kdl
+// if you use direnv you can compile with
+// typst compile main.typ
+//
+// otherwise
+// typst compile main.typ --root $PWD --font-path ./assets/fonts
 
 #show: kdl.template
 
@@ -15,4 +20,4 @@
 #kdl.pages.toc
 #include("./chapters/02-pre-gen.typ")
 
-#bibliography("/assets/bibliography.bib", full: true, style: "pensoft")
+#bibliography("./assets/bibliography.bib", full: true, style: "pensoft")
