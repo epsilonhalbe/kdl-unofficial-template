@@ -1,4 +1,4 @@
-#import "/template/main.typ" as kdl
+#import "@preview/kdl-unofficial-template:0.1.0" as kdl
 
 #show: kdl.template
 
@@ -15,4 +15,4 @@
 #kdl.pages.toc
 #include("./chapters/02-pre-gen.typ")
 
-#bibliography("/template/bibliography.bib", full: true, style: "pensoft")
+#bibliography("/assets/bibliography.bib", full: true, style: "pensoft")

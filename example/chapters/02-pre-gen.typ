@@ -1,20 +1,20 @@
-#import "/template/main.typ" as kult
+#import "@preview/kdl-unofficial-template:0.1.0" as kdl
 
 = Pre-Gens<pre-gens>
 
 == The Artist<the-artist>
 #columns(2)[
 === Skills<the-artist_skills>
-#kult.skill-tree(
+#kdl.skill-tree(
   will: 0, fort: 2, refl: 1,
   reas: 2, intu: -2, perc: 3, cool: 1, viol: -1, char: 1, soul: 0,
 )
 
 === Stability<the-artist_stability>
-#kult.stability
+#kdl.stability
 
 === Wounds<the-artist_wounds>
-#kult.wounds
+#kdl.wounds
 
 ===  Background<the-artist_background>
 ==== Name<the-artist_name>
@@ -39,11 +39,11 @@ The ring you inherited
 
 === Advantages<the-artist_advantages>
 
-#kult.move(
+#kdl.move(
   title: [Body Awareness],
   tag: "body-awareness",
   description: [Your body and mind are as one. Whenever you perform acrobatic or agile feats:],
-  attribute: kult.attrs.cool.name,
+  attribute: kdl.attrs.cool.name,
   success: "Choose one option.",
   complications: "Choose one option, but you expose yourself to danger or incur a cost.",
   failure: "Choose one option, but something goes very wrong. The GM makes a Move.",
@@ -56,7 +56,7 @@ The ring you inherited
     ]
 )
 
-#kult.move(
+#kdl.move(
   title: "Artifact",
   tag: "artifact",
   description: [
@@ -65,7 +65,7 @@ The ring you inherited
     pledge to repay this favour with blood or gold, when the time has come.]
     Whenever you activate the object:
   ],
-  attribute: kult.attrs.soul.name,
+  attribute: kdl.attrs.soul.name,
   success: [Choose one option (the GM determines what happens).],
   complications: [
     Choose one option (the GM determines what happens). However, the artifact
@@ -80,7 +80,7 @@ The ring you inherited
   ]
 )
 
-#kult.move(
+#kdl.move(
   title: "Enhanced Awareness",
   tag: "enhanced-awareness",
   description: [
@@ -88,7 +88,7 @@ The ring you inherited
     On a success, you have visions about the place and may be able to speak
     to entities tied to it:
   ],
-  attribute: kult.attrs.soul.name,
+  attribute: kdl.attrs.soul.name,
   success: [You can discern clear details regarding the location.],
   complications: [You get some basic impressions regarding the location.],
   failure: [
@@ -103,21 +103,21 @@ The ring you inherited
 )
 
 === Disadvantages<the-artist_disadvantages>
-#kult.move(
+#kdl.move(
   title: "Nightmares",
   tag: "nightmares",
   description: [
     You suffer from recurring nightmares, probably connected to your Dark
     Secrets. During any scene when you sleep:
   ],
-  attribute: kult.attrs.dis.name,
+  attribute: kdl.attrs.dis.name,
   success: [You sleep in peace.],
   complications: [
     The nightmares torment you. The GM may make a Move for your nightmares.
     For example, you are unable to sleep at all during the night (-1 ongoing
     until you sleep), something follows you back into reality, the
     nightmares provide you insight into the Truth, or you are forced to
-    process some trauma (#kult.attrs.will.move) when you wake up.
+    process some trauma (#kdl.attrs.will.move) when you wake up.
   ],
   failure: [
     The nightmares take over completely. You are trapped in the dream until
@@ -129,14 +129,14 @@ The ring you inherited
   ]
 )
 
-#kult.move(
+#kdl.move(
   title: "Drug Addict",
   tag: "drug-addict",
   description: [
     You are addicted to Alcohol and cocaine. At the beginning of the game
     and whenever you have been using, or have the opportunity to use:
   ],
-  attribute: kult.attrs.dis.name,
+  attribute: kdl.attrs.dis.name,
   success: [You are in control of the urge, for now.],
   complications: [The GM takes 1 Hold.],
   failure: [The GM takes 3 Hold.],
@@ -154,8 +154,8 @@ The ring you inherited
 === Character progression<the-artist_progress>
 
 ==== Experience<the-artist_xp>
-#kult.experience
+#kdl.experience
 
 ==== Advancements<the-artist_advancements>
-#kult.advancements
+#kdl.advancements
 ]

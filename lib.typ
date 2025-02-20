@@ -1,7 +1,7 @@
-#import "./typ/pageref.typ": pageref
-#import "./typ/skills.typ": skill-tree, attrs
-#import "./typ/style.typ": colors, fonts, pages, is-printer-friendly, initialized, move
-#import "./typ/trackers.typ": advancements, experience, stability, wounds
+#import "./lib/pageref.typ": pageref
+#import "./lib/skills.typ": skill-tree, attrs
+#import "./lib/style.typ": colors, fonts, pages, is-printer-friendly, initialized, move
+#import "./lib/trackers.typ": advancements, experience, stability, wounds
 
 #let template(doc) = [
   #set page(
@@ -34,11 +34,11 @@
     if not is-printer-friendly {
       context(
         if here().page() == 1 {
-          image("img/bg_title.jpg")
+          image("assets/img/bg_title.jpg")
         } else if calc.even(here().page()) {
-          image("img/bg_left.jpg")
+          image("assets/img/bg_left.jpg")
         } else {
-          image("img/bg_right.jpg")
+          image("assets/img/bg_right.jpg")
         })
       }
   )
@@ -57,7 +57,7 @@
       )
       if not is-printer-friendly {
         pagebreak(weak:true, to: "even") 
-        set page(background: image("img/bg_section.jpg"))
+        set page(background: image("assets/img/bg_section.jpg"))
         align(horizon, it)
         pagebreak()
       } else { it }

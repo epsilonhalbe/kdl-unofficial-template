@@ -1,4 +1,4 @@
-#import "/template/main.typ" as kdl
+#import "@preview/kdl-unofficial-template:0.1.0" as kdl
 
 = Introduction<introduction>
 #align(horizon + center, block(width: 75%, height: 10cm, kdl.initialized[

@@ -1,11 +1,12 @@
 [package]
-name = "kult-divinity-lost-community-scenario"
+name = "kdl-unofficial-template"
 version = "0.1.0"
 authors = ["Martin Heuschober"]
 license = "MIT"
+entrypoint = "lib.typ"
 description = "An unofficial template for community scenarios for the TTRPG 'KULT: divinity lost'"
 
 [template]
-path = "template"
+path = "example"
 entrypoint = "main.typ"
 thumbnail = "thumbnail.png"
