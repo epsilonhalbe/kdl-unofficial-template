@@ -1,6 +1,6 @@
 [package]
 name = "kdl-unofficial-template"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Martin Heuschober"]
 license = "MIT"
 entrypoint = "lib/lib.typ"

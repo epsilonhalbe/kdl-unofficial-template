@@ -1,4 +1,4 @@
-#import "@preview/kdl-unofficial-template:0.1.0" as kdl
+#import "@preview/kdl-unofficial-template:0.1.1" as kdl
 // NOTE: before compiling follow the README.md and install the fonts used in this template
 //
 // if you use direnv you can compile with
@@ -12,14 +12,14 @@
 #kdl.pages.title.with(
   title: "A tall tale",
   author: "Baron von Münchhausen",
-  size: 64pt // optional
+  size: 64pt, // optional
 )()
 
 #kdl.pages.blank
 #kdl.pages.blank
 
-#include("./chapters/01-intro.typ")
+#include "./chapters/01-intro.typ"
 #kdl.pages.toc
-#include("./chapters/02-pre-gen.typ")
+#include "./chapters/02-pre-gen.typ"
 
 #bibliography("./assets/bibliography.bib", full: true, style: "pensoft")

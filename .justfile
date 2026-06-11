@@ -1,8 +1,9 @@
-TYPST_ROOT := "$PWD"
-TYPST_FONT_PATHS := "$TYPST_ROOT/template/fonts"
-INSTALL_PATH := "${HOME}" / "Library" / "Application Support" / "typst" / "packages" / "preview" / "kdl-unofficial-template" / "0.1.0"
+version := "0.1.1"
+TYPST_ROOT := env('PWD')
+TYPST_FONT_PATHS := env('PWD') / "template" / "fonts"
+INSTALL_PATH := env('HOME') / "Library" / "Application Support" / "typst" / "packages" / "preview" / "kdl-unofficial-template" / version
 
-[working-directory:  "template"]
+[working-directory:  "./template/main/"]
 default:
   pwd
   typst compile main.typ --font-path {{TYPST_FONT_PATHS}} --root {{TYPST_ROOT}}
